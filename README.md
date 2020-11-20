@@ -1,5 +1,14 @@
 # node-photo-mosaic
 
+## Usage
+
+Download this folder, enter it, and then...
+
+```
+$ npm install mosaic-node-generator -g
+$ node mosaic.js <imageYouWantToCreateAsMosaic> <folderContainingImagesToUseAsTiles> <height/widthOfTiles>
+```
+
 ## To do
 
 1. Set up on Heroku
