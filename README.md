@@ -1,5 +1,9 @@
 # node-photo-mosaic
 
+## References
+
+https://www.npmjs.com/package/mosaic-node-generator
+
 ## Usage
 
 Download this folder, enter it, and then...
