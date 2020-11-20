@@ -5,8 +5,8 @@ if (args.length > 4) {
     mosaic.mosaic( 
       args[2],
       args[3],
-      args[4], 
-      args[4],
+      parseInt(args[4]),
+      parseInt(args[4]),
     );
 } else {
     console.log("Please provide source image.");
