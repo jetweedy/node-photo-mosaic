@@ -15,5 +15,5 @@ if (args.length > 4) {
     );
 
 } else {
-    console.log("Please provide source image.");
+    console.log("Please provide an image file, a folder full of images to use as tiles, and a numeric tile size value.");
 }
