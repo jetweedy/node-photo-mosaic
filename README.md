@@ -11,7 +11,7 @@ Download this folder, enter it, and then...
 ```
 $ npm install mosaic-node-generator -g
 $ npm install image-size --save
-$ node mosaic.js <imageYouWantToCreateAsMosaic> <folderContainingImagesToUseAsTiles> <height/widthOfTiles>
+$ node mosaic.js <image> <thumbsFolder> <tileHeightAndWidth> <numColsAndRows>
 ```
 
 ## To do
