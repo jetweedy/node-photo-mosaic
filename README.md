@@ -9,7 +9,7 @@ https://www.npmjs.com/package/mosaic-node-generator
 Download this folder, enter it, and then...
 
 ```
-$ npm install mosaic-node-generator -g
+$ npm install mosaic-node-generator
 $ npm install image-size --save
 $ node mosaic.js <sourceImage> <thumbsFolder> <tileHeightAndWidth> <numColsAndRows>
   e.g.
