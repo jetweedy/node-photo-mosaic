@@ -13,7 +13,7 @@ $ npm install mosaic-node-generator
 $ npm install image-size --save
 $ node mosaic.js <sourceImage> <thumbsFolder> <tileHeightAndWidth> <numColsAndRows>
   e.g.
-$ node mosaic.js <sourceImage> <thumbsFolder> 30 200
+$ node mosaic.js MyImage.jpg FolderWithMyThumbnails 60 120
   (will result in a 6000 pixel wide image)
 ```
 
