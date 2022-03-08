@@ -72,7 +72,7 @@ if (false) {
 }
 
 
-if (true) {
+if (false) {
     var hexnums = "0369CF";
     fs.readdir(path.join(__dirname, 'tarheels/thumbs'), function (err, files) {
         if (err) {
