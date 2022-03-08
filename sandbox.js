@@ -10,6 +10,17 @@ const imageThumbnail = require('image-thumbnail');
 const replaceColor = require('replace-color')
 
 
+//// Thumbnailing
+
+async function makeThumb(s, t) {
+    const thumbnail = await imageThumbnail(s);
+//    console.log(thumbnail);
+    await fs.writeFileSync(t, thumbnail);
+//    console.log(t+"/"+f);
+}
+
+//makeThumb("./tarheels/unc.jpg", "./tarheels/unc1.jpg");
+
 //// Manipulating colors of images
 
 const tintImage = (source, target, t) => {
@@ -35,7 +46,7 @@ function leadingZeros(s) {
     return s;
 }
 
-//tintImage("./tarheels/original.png", "./tarheels/modified.png", {r: 255, g: 255, b: 255}); 
+//tintImage("./tarheels/unc.jpg", "./tarheels/unc1.png", {r: 255, g: 255, b: 255}); 
 
 function repColor(source, from, to, target, callback) {
 
@@ -45,8 +56,8 @@ function repColor(source, from, to, target, callback) {
         type: 'hex',
         targetColor: from,
         replaceColor: to
-      },
-      deltaE: 20
+      }
+      , deltaE: 20
     }, (err, jimpObject) => {
       if (err) return console.log(err)
       jimpObject.write(target, (err) => {
@@ -56,16 +67,20 @@ function repColor(source, from, to, target, callback) {
 
 }
 
+//repColor("./tiles/BeakyBuzzard.jpg", "#49d600", "#ffffff", "./tiles/BeakyBuzzard1.jpg");
+
+
+
 
 if (false) {
-    var hexnums = "0369CF";
+    var hexnums = "0356789ACF"; // "0356789ACF";
     var n = 0;
     for (var i in hexnums) {
         for (var j in hexnums) {
             for (var k in hexnums) {
                 var hex = ""+hexnums[i]+hexnums[i]+hexnums[j]+hexnums[j]+hexnums[k]+hexnums[k];
                 console.log(++n, hex);
-                repColor("./tarheels/original.png", "#ffffff", "#"+hex, "./tarheels/thumbs/"+hex+".png");
+                repColor("./tiles/BeakyBuzzard.jpg", "#ffffff", "#"+hex, "./tiles/temp/"+hex+".jpg");
             }
         }
     }
@@ -74,19 +89,19 @@ if (false) {
 
 if (false) {
     var hexnums = "0369CF";
-    fs.readdir(path.join(__dirname, 'tarheels/thumbs'), function (err, files) {
+    fs.readdir(path.join(__dirname, 'tiles/temp'), function (err, files) {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
-        } 
+        }
         files.forEach(function (file) {
             for (var i in hexnums) {
                 var hex = ""+hexnums[i]+hexnums[i]+hexnums[i]+hexnums[i]+hexnums[i]+hexnums[i];
-                repColor("./tarheels/thumbs/"+file, "#69a1c9", "#"+hex, "./tarheels/thumbs/"+hex+"_"+file);
+                repColor("./tiles/temp/"+file, "#49d600", "#"+hex, "./tiles/BeakyBuzzard/"+hex+"_"+file);
             }
         });
     });
-
 }
+
 
 
 
